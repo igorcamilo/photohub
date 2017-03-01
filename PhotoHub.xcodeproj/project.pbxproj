@@ -10,9 +10,9 @@
 		4B8CCC761E67401300EE1228 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8CCC751E67401300EE1228 /* AppDelegate.swift */; };
 		4B8CCC7D1E67401300EE1228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B8CCC7C1E67401300EE1228 /* Assets.xcassets */; };
 		4B8CCC801E67401300EE1228 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B8CCC7E1E67401300EE1228 /* LaunchScreen.storyboard */; };
-		4B8CCC8E1E67431F00EE1228 /* PhotoHubKit-iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B8CCC8C1E67431F00EE1228 /* PhotoHubKit-iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4B8CCC911E67431F00EE1228 /* PhotoHubKit-iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8CCC8A1E67431F00EE1228 /* PhotoHubKit-iOS.framework */; };
-		4B8CCC921E67431F00EE1228 /* PhotoHubKit-iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8CCC8A1E67431F00EE1228 /* PhotoHubKit-iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4B8CCC8E1E67431F00EE1228 /* PhotoHubKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B8CCC8C1E67431F00EE1228 /* PhotoHubKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4B8CCC911E67431F00EE1228 /* PhotoHubKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8CCC8A1E67431F00EE1228 /* PhotoHubKit.framework */; };
+		4B8CCC921E67431F00EE1228 /* PhotoHubKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4B8CCC8A1E67431F00EE1228 /* PhotoHubKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +32,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4B8CCC921E67431F00EE1228 /* PhotoHubKit-iOS.framework in Embed Frameworks */,
+				4B8CCC921E67431F00EE1228 /* PhotoHubKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,8 +45,8 @@
 		4B8CCC7C1E67401300EE1228 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B8CCC7F1E67401300EE1228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B8CCC811E67401300EE1228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4B8CCC8A1E67431F00EE1228 /* PhotoHubKit-iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "PhotoHubKit-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B8CCC8C1E67431F00EE1228 /* PhotoHubKit-iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PhotoHubKit-iOS.h"; sourceTree = "<group>"; };
+		4B8CCC8A1E67431F00EE1228 /* PhotoHubKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PhotoHubKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B8CCC8C1E67431F00EE1228 /* PhotoHubKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoHubKit.h; sourceTree = "<group>"; };
 		4B8CCC8D1E67431F00EE1228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,7 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B8CCC911E67431F00EE1228 /* PhotoHubKit-iOS.framework in Frameworks */,
+				4B8CCC911E67431F00EE1228 /* PhotoHubKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				4B8CCC721E67401300EE1228 /* PhotoHub-iOS.app */,
-				4B8CCC8A1E67431F00EE1228 /* PhotoHubKit-iOS.framework */,
+				4B8CCC8A1E67431F00EE1228 /* PhotoHubKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,10 +101,11 @@
 		4B8CCC8B1E67431F00EE1228 /* PhotoHubKit-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				4B8CCC8C1E67431F00EE1228 /* PhotoHubKit-iOS.h */,
+				4B8CCC8C1E67431F00EE1228 /* PhotoHubKit.h */,
 				4B8CCC8D1E67431F00EE1228 /* Info.plist */,
 			);
-			path = "PhotoHubKit-iOS";
+			name = "PhotoHubKit-iOS";
+			path = PhotoHubKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,7 +115,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B8CCC8E1E67431F00EE1228 /* PhotoHubKit-iOS.h in Headers */,
+				4B8CCC8E1E67431F00EE1228 /* PhotoHubKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,7 +156,7 @@
 			);
 			name = "PhotoHubKit-iOS";
 			productName = "PhotoHubKit-iOS";
-			productReference = 4B8CCC8A1E67431F00EE1228 /* PhotoHubKit-iOS.framework */;
+			productReference = 4B8CCC8A1E67431F00EE1228 /* PhotoHubKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -416,14 +417,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "PhotoHubKit-iOS/Info.plist";
+				INFOPLIST_FILE = PhotoHubKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.igorcamilo.PhotoHubKit-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PhotoHubKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -475,13 +475,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "PhotoHubKit-iOS/Info.plist";
+				INFOPLIST_FILE = PhotoHubKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.igorcamilo.PhotoHubKit-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PhotoHubKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
