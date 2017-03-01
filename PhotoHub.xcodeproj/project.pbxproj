@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4B8CCC761E67401300EE1228 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8CCC751E67401300EE1228 /* AppDelegate.swift */; };
-		4B8CCC781E67401300EE1228 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8CCC771E67401300EE1228 /* ViewController.swift */; };
-		4B8CCC7B1E67401300EE1228 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B8CCC791E67401300EE1228 /* Main.storyboard */; };
 		4B8CCC7D1E67401300EE1228 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B8CCC7C1E67401300EE1228 /* Assets.xcassets */; };
 		4B8CCC801E67401300EE1228 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B8CCC7E1E67401300EE1228 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -17,8 +15,6 @@
 /* Begin PBXFileReference section */
 		4B8CCC721E67401300EE1228 /* PhotoHub-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PhotoHub-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B8CCC751E67401300EE1228 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4B8CCC771E67401300EE1228 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4B8CCC7A1E67401300EE1228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4B8CCC7C1E67401300EE1228 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B8CCC7F1E67401300EE1228 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B8CCC811E67401300EE1228 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -55,8 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				4B8CCC751E67401300EE1228 /* AppDelegate.swift */,
-				4B8CCC771E67401300EE1228 /* ViewController.swift */,
-				4B8CCC791E67401300EE1228 /* Main.storyboard */,
 				4B8CCC7C1E67401300EE1228 /* Assets.xcassets */,
 				4B8CCC7E1E67401300EE1228 /* LaunchScreen.storyboard */,
 				4B8CCC811E67401300EE1228 /* Info.plist */,
@@ -124,7 +118,6 @@
 			files = (
 				4B8CCC801E67401300EE1228 /* LaunchScreen.storyboard in Resources */,
 				4B8CCC7D1E67401300EE1228 /* Assets.xcassets in Resources */,
-				4B8CCC7B1E67401300EE1228 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +128,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4B8CCC781E67401300EE1228 /* ViewController.swift in Sources */,
 				4B8CCC761E67401300EE1228 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,14 +135,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4B8CCC791E67401300EE1228 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4B8CCC7A1E67401300EE1228 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4B8CCC7E1E67401300EE1228 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -165,12 +149,14 @@
 		4B28D7F91E673DF2002152D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Debug;
 		};
 		4B28D7FA1E673DF2002152D7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 			};
 			name = Release;
 		};
@@ -216,11 +202,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "PhotoHub-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.igorcamilo.PhotoHub-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.igorcamilo.photohub.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -266,10 +251,9 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "PhotoHub-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.igorcamilo.PhotoHub-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.igorcamilo.photohub.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
