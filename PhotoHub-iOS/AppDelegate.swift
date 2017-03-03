@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       print("Posts", result)
     }
     
-    window?.rootViewController = UITableViewController()
+    window?.rootViewController = PostsViewController()
     window?.makeKeyAndVisible()
     
     return true
