@@ -15,16 +15,18 @@ class PostsViewModel {
   private var postsModel: [Post]? {
     didSet {
       let formatter = DateFormatter()
-      formatter.dateStyle = .full
-      formatter.timeStyle = .full
+      formatter.dateStyle = .short
+      formatter.timeStyle = .short
       formatter.doesRelativeDateFormatting = true
       postsDateCache = postsModel?.map({ formatter.string(from: $0.createdAt) })
     }
   }
+  /// Cache for string representations of post dates.
   private var postsDateCache: [String]?
+  /// Network request in progress.
+  private(set) var isBusy = false
   
-  private(set) var busy = false
-  
+  /// Returns information about the current forum.
   var forumHeader: (slug: String, title: String, description: String, headerImageURL: URL, imageURL: URL)? {
     guard let forum = forumModel else {
       return nil
@@ -36,49 +38,34 @@ class PostsViewModel {
     return postsModel?.count ?? 0
   }
   
-  func postHeader(section: Int) -> (userDisplayName: String, userAvatarURL: URL, text: String)? {
+  /// Returns information about the post, excluding post images.
+  func postHeader(section: Int) -> (userDisplayName: String, userAvatarURL: URL, text: String, date: String, upVotes: String)? {
     guard let post = postsModel?[section] else {
       return nil
     }
-    return (post.createdBy.displayName, post.createdBy.avatarURL, post.rawContent)
+    return (post.createdBy.displayName, post.createdBy.avatarURL, post.rawContent, postsDateCache![section], "\(post.upVotes)")
   }
   
   func numberOfImages(section: Int) -> Int {
     return postsModel?[section].images.count ?? 0
   }
   
-  func image(indexPath: IndexPath, completionHandler: @escaping (Result<UIImage>) -> Void) -> CGSize? {
+  /// Returns information about each image of the post.
+  func image(indexPath: IndexPath) -> (size: CGSize?, url: URL)? {
     guard let webImage = postsModel?[indexPath.section].images[indexPath.row] else {
-      completionHandler(.failure(Error.noItem))
       return nil
     }
-    request(webImage.url).responseData { (dataResponse) in
-      do {
-        if let error = dataResponse.error {
-          throw error
-        }
-        guard let data = dataResponse.data else {
-          throw NetworkError.noData
-        }
-        guard let image = UIImage(data: data) else {
-          throw Error.invalidData
-        }
-        completionHandler(.success(image))
-        
-      } catch {
-        completionHandler(.failure(error))
-      }
-    }
-    return webImage.size
+    return (webImage.size, webImage.url)
   }
   
+  /// Requests an updated versioon of Photography's forum and posts.
   func update(completionHandler: @escaping (Result<Void>) -> Void) {
     
-    guard busy == false else {
+    guard isBusy == false else {
       completionHandler(.failure(Error.busy))
       return
     }
-    busy = true
+    isBusy = true
     
     Forum.get(id: "photography") { [weak self] (result) in
       
@@ -98,19 +85,17 @@ class PostsViewModel {
             completionHandler(.failure(error))
           }
           
-          self?.busy = false
+          self?.isBusy = false
         }
         
       case .failure(let error):
         completionHandler(.failure(error))
-        self?.busy = false
+        self?.isBusy = false
       }
     }
   }
   
   enum Error: Swift.Error {
     case busy
-    case noItem
-    case invalidData
   }
 }

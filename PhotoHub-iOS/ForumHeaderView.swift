@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 
+/// Presents information about the forum.
 class ForumHeaderView: UIView {
   
   private let wrapper = UIView()
@@ -16,6 +17,14 @@ class ForumHeaderView: UIView {
   let avatarView = UIImageView()
   let nameLabel = UILabel()
   let descriptionLabel = UILabel()
+  
+  func updateHeight(for width: CGFloat) {
+    frame.size.width = width
+    layoutIfNeeded()
+    frame.size.height = wrapper.frame.size.height + CGFloat(LayoutConstants.bigMargin)
+  }
+  
+  // MARK: - Initialization
   
   override init(frame: CGRect = .zero) {
     super.init(frame: frame)
@@ -29,18 +38,16 @@ class ForumHeaderView: UIView {
   
   private func initialize() {
     
-    backgroundColor = .yellow
-    
-    wrapper.backgroundColor = .green
     addSubview(wrapper)
     wrapper.snp.makeConstraints { (make) in
       make.leading.greaterThanOrEqualToSuperview()
       make.top.equalToSuperview()
-      make.width.equalTo(LayoutConstants.maxWidth).priority(.high)
+      make.width.equalTo(LayoutConstants.maxWidth).priority(999)
       make.centerX.equalToSuperview()
     }
     
-    headerView.backgroundColor = .blue
+    headerView.contentMode = .scaleAspectFill
+    headerView.clipsToBounds = true
     wrapper.addSubview(headerView)
     headerView.snp.makeConstraints { (make) in
       make.top.equalToSuperview()
@@ -49,7 +56,8 @@ class ForumHeaderView: UIView {
       make.height.equalTo(headerView.snp.width).multipliedBy(0.4)
     }
     
-    avatarView.backgroundColor = .red
+    avatarView.contentMode = .scaleAspectFill
+    avatarView.clipsToBounds = true
     wrapper.addSubview(avatarView)
     avatarView.snp.makeConstraints { (make) in
       make.size.equalTo(CGSize(width: 64, height: 64))

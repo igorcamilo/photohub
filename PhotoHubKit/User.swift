@@ -20,7 +20,8 @@ extension User: Unmarshaling {
   public init(object: MarshaledObject) throws {
     
     id = try object.value(for: "id")
-    avatarURL = try object.value(for: "avatar.url")
+    let insecureURL: URL = try object.value(for: "avatar.url")
+    avatarURL = insecureURL.secured
     displayName = try object.value(for: "displayName")
   }
 }

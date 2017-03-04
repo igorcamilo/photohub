@@ -9,21 +9,24 @@
 import UIKit
 import SnapKit
 
+/// Presents a single image of a post.
 class PostImageCell: UITableViewCell {
   
-  var indexPath: IndexPath?
   let postImageView = UIImageView()
   
+  /// Adjusts layout for image of this size
   func adjust(for size: CGSize) {
     postImageView.snp.remakeConstraints { (make) in
       make.leading.greaterThanOrEqualToSuperview()
       make.top.equalToSuperview()
       make.bottom.equalToSuperview()
-      make.width.equalTo(LayoutConstants.maxWidth).priority(.high)
+      make.width.equalTo(LayoutConstants.maxWidth).priority(999)
       make.height.equalTo(postImageView.snp.width).multipliedBy(size.height / size.width).priority(.high)
       make.centerX.equalToSuperview()
     }
   }
+  
+  // MARK: - Initialization
   
   public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -36,6 +39,7 @@ class PostImageCell: UITableViewCell {
   }
   
   private func initialize() {
+    backgroundColor = .groupTableViewBackground
     addSubview(postImageView)
   }
 }
