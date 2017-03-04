@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "4B8CCCBC1E6ACDB900EE1228"
+               BuildableName = "PhotoHubTests-iOS.xctest"
+               BlueprintName = "PhotoHubTests-iOS"
+               ReferencedContainer = "container:PhotoHub.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
