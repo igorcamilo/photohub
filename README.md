@@ -1,2 +1,2 @@
-# photohub
-PhotoHub is a viewer for Hubchat's Photograpy forum
+# PhotoHub
+PhotoHub is a viewer for Hubchat's Photography forum
