@@ -9,6 +9,8 @@
 struct LayoutConstants {
   
   static let maxWidth = 600
+  static let bigMargin = 10
+  static let smallMargin = 5
   
   private init() {}
 }

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import PhotoHubKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,14 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     
-    Forum.get(id: "photography") { (result) in
-      print("Forum", result)
-    }
-    Post.getList(forumId: "photography") { (result) in
-      print("Posts", result)
-    }
-    
-    window?.rootViewController = PostsViewController()
+    window?.rootViewController = UINavigationController(rootViewController: PostsViewController())
     window?.makeKeyAndVisible()
     
     return true

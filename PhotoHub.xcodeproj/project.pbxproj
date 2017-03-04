@@ -22,6 +22,11 @@
 		4B8CCCAA1E6996DF00EE1228 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8CCCA91E6996DF00EE1228 /* PostsViewController.swift */; };
 		4B8CCCAC1E699AEE00EE1228 /* ForumHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8CCCAB1E699AEE00EE1228 /* ForumHeaderView.swift */; };
 		4B8CCCAE1E69A38400EE1228 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8CCCAD1E69A38400EE1228 /* Constants.swift */; };
+		4B8CCCB01E6A030B00EE1228 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8CCCAF1E6A030B00EE1228 /* PostsViewModel.swift */; };
+		4B8CCCB21E6A385C00EE1228 /* PostImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8CCCB11E6A385C00EE1228 /* PostImageCell.swift */; };
+		4B8CCCB41E6A3E1C00EE1228 /* WebImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8CCCB31E6A3E1C00EE1228 /* WebImage.swift */; };
+		4B8CCCB61E6A4F4D00EE1228 /* URL+secure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8CCCB51E6A4F4D00EE1228 /* URL+secure.swift */; };
+		4B8CCCB81E6A582D00EE1228 /* PostHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B8CCCB71E6A582D00EE1228 /* PostHeaderView.swift */; };
 		99E126FEDF1766B3158C95A5 /* Pods_PhotoHubKit_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 823176D5E8D93E98FEDB6BB9 /* Pods_PhotoHubKit_iOS.framework */; };
 		F3B6D0753C385773410C3E0F /* Pods_PhotoHub_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F652E34578B383771426B0 /* Pods_PhotoHub_iOS.framework */; };
 /* End PBXBuildFile section */
@@ -68,6 +73,11 @@
 		4B8CCCA91E6996DF00EE1228 /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		4B8CCCAB1E699AEE00EE1228 /* ForumHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumHeaderView.swift; sourceTree = "<group>"; };
 		4B8CCCAD1E69A38400EE1228 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4B8CCCAF1E6A030B00EE1228 /* PostsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
+		4B8CCCB11E6A385C00EE1228 /* PostImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostImageCell.swift; sourceTree = "<group>"; };
+		4B8CCCB31E6A3E1C00EE1228 /* WebImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebImage.swift; sourceTree = "<group>"; };
+		4B8CCCB51E6A4F4D00EE1228 /* URL+secure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+secure.swift"; sourceTree = "<group>"; };
+		4B8CCCB71E6A582D00EE1228 /* PostHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostHeaderView.swift; sourceTree = "<group>"; };
 		823176D5E8D93E98FEDB6BB9 /* Pods_PhotoHubKit_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoHubKit_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88F652E34578B383771426B0 /* Pods_PhotoHub_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoHub_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A30D832C6C26A798D26AA98 /* Pods-PhotoHubKit-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoHubKit-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoHubKit-iOS/Pods-PhotoHubKit-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,7 +141,10 @@
 			children = (
 				4B8CCC751E67401300EE1228 /* AppDelegate.swift */,
 				4B8CCCA91E6996DF00EE1228 /* PostsViewController.swift */,
+				4B8CCCAF1E6A030B00EE1228 /* PostsViewModel.swift */,
 				4B8CCCAB1E699AEE00EE1228 /* ForumHeaderView.swift */,
+				4B8CCCB11E6A385C00EE1228 /* PostImageCell.swift */,
+				4B8CCCB71E6A582D00EE1228 /* PostHeaderView.swift */,
 				4B8CCCAD1E69A38400EE1228 /* Constants.swift */,
 				4B8CCC7C1E67401300EE1228 /* Assets.xcassets */,
 				4B8CCC7E1E67401300EE1228 /* LaunchScreen.storyboard */,
@@ -149,7 +162,9 @@
 				4B8CCCA51E68FDE500EE1228 /* NetworkError.swift */,
 				4B8CCC9D1E68C7A000EE1228 /* Post.swift */,
 				4B8CCCA31E68E53400EE1228 /* Router.swift */,
+				4B8CCCB51E6A4F4D00EE1228 /* URL+secure.swift */,
 				4B8CCC9F1E68E37B00EE1228 /* User.swift */,
+				4B8CCCB31E6A3E1C00EE1228 /* WebImage.swift */,
 				4B8CCC8D1E67431F00EE1228 /* Info.plist */,
 			);
 			name = "PhotoHubKit-iOS";
@@ -365,8 +380,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B8CCCAC1E699AEE00EE1228 /* ForumHeaderView.swift in Sources */,
+				4B8CCCB21E6A385C00EE1228 /* PostImageCell.swift in Sources */,
+				4B8CCCB01E6A030B00EE1228 /* PostsViewModel.swift in Sources */,
 				4B8CCCAA1E6996DF00EE1228 /* PostsViewController.swift in Sources */,
 				4B8CCC761E67401300EE1228 /* AppDelegate.swift in Sources */,
+				4B8CCCB81E6A582D00EE1228 /* PostHeaderView.swift in Sources */,
 				4B8CCCAE1E69A38400EE1228 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,6 +393,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B8CCCB61E6A4F4D00EE1228 /* URL+secure.swift in Sources */,
+				4B8CCCB41E6A3E1C00EE1228 /* WebImage.swift in Sources */,
 				4B8CCCA81E698AF200EE1228 /* Date+Timestamp.swift in Sources */,
 				4B8CCCA41E68E53400EE1228 /* Router.swift in Sources */,
 				4B8CCCA01E68E37B00EE1228 /* User.swift in Sources */,

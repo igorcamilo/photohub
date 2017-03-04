@@ -6,7 +6,7 @@
 //
 //
 
-enum NetworkError: Error {
+public enum NetworkError: Error {
   
   case noData
 }

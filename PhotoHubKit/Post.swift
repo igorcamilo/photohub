@@ -11,18 +11,21 @@ import Marshal
 
 public struct Post {
   
-  var rawContent: String
-  var imageURLs: [URL]
-  var upVotes: Int
-  var createdAt: Date
-  var id: String
-  var createdBy: User
+  public var rawContent: String
+  public var images: [WebImage]
+  public var upVotes: Int
+  public var createdAt: Date
+  public var id: String
+  public var createdBy: User
   
   public static func getList(forumId: String, completionHandler: @escaping (Result<[Post]>) -> Void) {
     
     request(Router.posts(forumId: forumId)).responseData { (dataResponse) in
       
       do {
+        if let error = dataResponse.error {
+          throw error
+        }
         guard let data = dataResponse.data else {
           throw NetworkError.noData
         }
@@ -41,8 +44,7 @@ extension Post: Unmarshaling {
   public init(object: MarshaledObject) throws {
     
     rawContent = try object.value(for: "rawContent")
-    let rawImages: [MarshaledObject] = try object.value(for: "entities.images")
-    imageURLs = try rawImages.map { try $0.value(for: "cdnUrl") }
+    images = try object.value(for: "entities.images")
     upVotes = try object.value(for: "stats.upVotes")
     createdAt = Date(milisecondsSince1970: try object.value(for: "timestamp"))
     id = try object.value(for: "id")

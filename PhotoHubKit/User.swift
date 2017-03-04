@@ -8,16 +8,16 @@
 
 import Marshal
 
-struct User {
+public struct User {
   
-  var id: String
-  var avatarURL: URL
-  var displayName: String
+  public var id: String
+  public var avatarURL: URL
+  public var displayName: String
 }
 
 extension User: Unmarshaling {
   
-  init(object: MarshaledObject) throws {
+  public init(object: MarshaledObject) throws {
     
     id = try object.value(for: "id")
     avatarURL = try object.value(for: "avatar.url")
